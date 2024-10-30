@@ -12,6 +12,7 @@ This project is a Django-based API for managing spy cats, their missions, and ta
 - Salary management for spy cats
 - Detailed API documentation
 
+
 ## Prerequisites
 Before running the project, ensure you have:
 

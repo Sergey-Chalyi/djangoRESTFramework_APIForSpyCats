@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "unique-id",
+		"_postman_id": "5593134f-0b0b-45a0-a018-6959bc60c28f",
 		"name": "Spy Cat Agency API",
 		"description": "Collection for testing Spy Cat Agency API endpoints",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38651301"
 	},
 	"variable": [
 		{
