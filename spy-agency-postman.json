@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "unique-id",
+		"name": "Spy Cat Agency API",
+		"description": "Collection for testing Spy Cat Agency API endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	],
+	"item": [
+		{
+			"name": "Spy Cats",
+			"item": [
+				{
+					"name": "List Spy Cats",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "{{base_url}}/api/v1/cats/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "v1", "cats"]
+						}
+					}
+				},
+				{
+					"name": "Create Spy Cat",
+					"request": {
+						"method": "POST",
+						"url": {
+							"raw": "{{base_url}}/api/v1/cats/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "v1", "cats"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Agent Whiskers\",\n    \"years_of_experience\": 5,\n    \"breed\": \"Persian\",\n    \"salary\": \"50000.00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					}
+				},
+				{
+					"name": "Update Spy Cat Salary",
+					"request": {
+						"method": "PUT",
+						"url": {
+							"raw": "{{base_url}}/api/v1/cats/1/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "v1", "cats", "1"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"salary\": \"55000.00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					}
+				},
+				{
+					"name": "Delete Spy Cat",
+					"request": {
+						"method": "DELETE",
+						"url": {
+							"raw": "{{base_url}}/api/v1/cats/1/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "v1", "cats", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Missions",
+			"item": [
+				{
+					"name": "List Missions",
+					"request": {
+						"method": "GET",
+						"url": {
+							"raw": "{{base_url}}/api/v1/missions/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "v1", "missions"]
+						}
+					}
+				},
+				{
+					"name": "Create Mission",
+					"request": {
+						"method": "POST",
+						"url": {
+							"raw": "{{base_url}}/api/v1/missions/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "v1", "missions"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"targets\": [\n        {\n            \"name\": \"Secret Documents\",\n            \"country\": \"Switzerland\",\n            \"notes\": \"Located in mountain fortress\"\n        },\n        {\n            \"name\": \"Mystery Device\",\n            \"country\": \"Japan\",\n            \"notes\": \"High security facility\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					}
+				},
+				{
+					"name": "Assign Cat to Mission",
+					"request": {
+						"method": "PATCH",
+						"url": {
+							"raw": "{{base_url}}/api/v1/missions/1/assign_cat/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "v1", "missions", "1", "assign_cat"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cat_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					}
+				},
+				{
+					"name": "Complete Mission",
+					"request": {
+						"method": "PATCH",
+						"url": {
+							"raw": "{{base_url}}/api/v1/missions/1/complete/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "v1", "missions", "1", "complete"]
+						}
+					}
+				},
+				{
+					"name": "Delete Mission",
+					"request": {
+						"method": "DELETE",
+						"url": {
+							"raw": "{{base_url}}/api/v1/missions/1/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "v1", "missions", "1"]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Targets",
+			"item": [
+				{
+					"name": "Update Target Notes",
+					"request": {
+						"method": "PATCH",
+						"url": {
+							"raw": "{{base_url}}/api/v1/targets/1/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "v1", "targets", "1"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"notes\": \"Updated target information\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					}
+				},
+				{
+					"name": "Complete Target",
+					"request": {
+						"method": "PATCH",
+						"url": {
+							"raw": "{{base_url}}/api/v1/targets/1/complete/",
+							"host": ["{{base_url}}"],
+							"path": ["api", "v1", "targets", "1", "complete"]
+						},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"complete\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					}
+				}
+			]
+		}
+	]
+}

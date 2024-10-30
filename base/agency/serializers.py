@@ -198,7 +198,6 @@ class TargetUpdateSerializer(serializers.ModelSerializer):
         # Return the validated attributes
         return attrs
 
-
 class TargetCompleteSerializer(serializers.ModelSerializer):
     """
     Serializer for marking a Target instance as completed.
